@@ -6,12 +6,20 @@
   "unpkg": "dist/view-file.umd.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "npm version patch&&npm publish",
+    "test-publish": "npm publish --dry-run",
     "build-cjs": "webpack --config ./config/webpack.config.cjs.js",
     "build-umd": "webpack --config ./config/webpack.config.umd.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "example",
+    "src"
   ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lvzegeng/file-preview.git"
