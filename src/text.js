@@ -4,11 +4,15 @@ import "nprogress/nprogress.css";
 
 import "./text.css";
 
+export default function index(param) {
+  verifyData(param);
 
-export default function index(data={}) {
-  verifyData(data)
+  let data = param;
+  if (typeof param === "string") {
+    data = { url: param };
+  }
 
-  const { url, method = "get", container } = data;
+  const { url, method = "get", container = "body", showDownload = true } = data;
 
   nprogress.configure({ parent: container });
   nprogress.start();
@@ -20,22 +24,24 @@ export default function index(data={}) {
   })
     .then(data => {
       const cloneData = data.clone();
-      blob=cloneData.blob();
-      return data.text()
+      blob = cloneData.blob();
+      return data.text();
     })
     .then(data => {
       const dom = document.createElement("div");
       dom.innerText = data;
       dom.className = "view-file-text";
 
-      const btn = document.createElement('a');
-      btn.innerText='下载'
-      btn.download=''
-      btn.className = 'view-file-text-btn';
-      blob.then(data=>{
-        btn.href = URL.createObjectURL(data);
-      })
-      dom.appendChild(btn)
+      if (showDownload) {
+        const btn = document.createElement("a");
+        btn.innerText = "下载";
+        btn.download = "";
+        btn.className = "view-file-text-btn";
+        blob.then(data => {
+          btn.href = URL.createObjectURL(data);
+        });
+        dom.appendChild(btn);
+      }
 
       document.querySelector(container).appendChild(dom);
     })

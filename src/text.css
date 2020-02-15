@@ -1,13 +1,13 @@
-.view-file-text{
+.view-file-text {
   white-space: pre-wrap;
   position: relative;
   overflow: hidden;
   min-height: 2em;
 }
 
-
-.view-file-text-btn{
- position: absolute;
+.view-file-text-btn {
+  text-decoration-line: none;
+  position: absolute;
   right: 8px;
   top: 8px;
 }
