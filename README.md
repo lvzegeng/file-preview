@@ -5,16 +5,15 @@
 ### script
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/view-file@1.0.7/dist/view-file.css"
-/>
-<script src="https://unpkg.com/view-file@1.0.7/dist/view-file.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/view-file/dist/view-file.css" />
+<script src="https://unpkg.com/view-file/dist/view-file.umd.js"></script>
 ```
 
 ### npm
 
-\$ npm install --save view-file
+```js
+npm install --save view-file
+```
 
 ```js
 import viewFile from "view-file";
@@ -28,20 +27,25 @@ require("view-file/dist/iew-file.css");
 
 ## 使用
 
-viewFile(url|object)
+viewFile(url | object)
 
-viewFile({
 url string 请求地址，必须
+
 container domString 文件内容显示的 DOM 位置，必须，默认"body"
+
 method string 请求方法，可选，默认 "get"
+
 showDownload boolean 是否显示下载按钮，默认 true
-})
 
 ## 例子
 
-viewFile('/example/test.txt');
+```js
+viewFile("/example/test.txt");
+```
 
+```js
 viewFile({
-url: '/example/test.txt',
-container: '#body',
+  url: "/example/test.txt",
+  container: "#body"
 });
+```
