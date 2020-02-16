@@ -1,6 +1,6 @@
 {
   "name": "view-file",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "在线预览文件",
   "source": "src/index.js",
   "main": "dist/view-file.js",
@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lvzegeng/file-preview.git"
+    "url": "git+https://github.com/lvzegeng/view-file.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lvzegeng/file-preview/issues"
+    "url": "https://github.com/lvzegeng/view-file/issues"
   },
-  "homepage": "https://github.com/lvzegeng/file-preview#readme",
+  "homepage": "https://github.com/lvzegeng/view-file#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
