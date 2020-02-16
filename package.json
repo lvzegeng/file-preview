@@ -1,6 +1,6 @@
 {
   "name": "view-file",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "在线预览文件",
   "source": "src/index.js",
   "main": "dist/view-file.js",
